@@ -57,16 +57,18 @@ class Place extends React.Component {
     render() {
         return (
             <div className="place">
-                <h3>{this.props.result.name}</h3>
-                <div className="details">
-                    <h4>Company Details </h4>
+                <h3 style={{textAlign: "center"}}>{this.props.result.name}</h3>
+                <div className="details" style={{textAlign: "center"}}>
+                    <h4 style={{textAlign: "center"}}>Company Details </h4>
                     <p>Address: {this.state.address}</p>
                     <p>Phone: {this.state.phone}</p>
                     <p>Inndustries: {this.state.industries}</p>
                 </div>
                 <div className="pics">
-                    <h4>Pictures</h4>
-                    {this.state.photos}
+                    <h4 style={{textAlign: "center"}}>Pictures</h4>
+                    <div className="row">
+                        {this.state.photos}
+                    </div>
                 </div>
             </div>
         );

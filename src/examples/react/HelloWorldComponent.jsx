@@ -17,12 +17,18 @@ class Container extends React.Component {
   }
   render() {
     return (
-      <div>
+      <div className="container-fluid">
         <div className='alert alert-success'>
           <p>Bussiness Seach</p>
         </div>
-        <SearchForm onSearch={this.search}></SearchForm>
-        <MapResults search={this.state.searchData} ref="map"></MapResults>
+        <div className="row">
+          <div className="col-md-8 col-md-push-2 col-md-pull-2">
+            <SearchForm onSearch={this.search}></SearchForm>
+          </div>
+        </div>
+        <div className="row">
+          <MapResults search={this.state.searchData} ref="map"></MapResults>
+        </div>
       </div>
     )
   }

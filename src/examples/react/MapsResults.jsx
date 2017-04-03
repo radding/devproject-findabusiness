@@ -42,7 +42,7 @@ class MapResults extends React.Component {
     }
     render() {
         return (
-            <div>
+            <div className="col-md-8 col-md-push-2">
                 <div className="business" ref="business">
                 </div>
                 <div className="business_list">

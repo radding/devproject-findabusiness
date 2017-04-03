@@ -13,7 +13,6 @@ class Photo extends React.Component {
             (resp) => {
                 var data = resp.outputs[0].data.concepts;
                 this.buildCaptions(data);
-                console.log(resp);
             },
             (err) => {
                 console.log(err);
@@ -28,16 +27,29 @@ class Photo extends React.Component {
     buildCaptions(captions) {
         var caps = [];
         captions.forEach((elem, index, arr) => {
-            caps.push(<span className="caption" key={index}>{elem.name}</span>)
+            if (index < arr.length -1) {
+                caps.push(elem.name + ", ");
+            }
+            else {
+                caps.push("and ");
+                caps.push(elem.name);
+            }
+            
         });
         this.setState({captions: caps});
     }
     render() {
         return (
-            <div>
-                <img src={this.props.url} />
-                <div className="captions">
-                    {this.state.captions}
+            <div className="col-md-3">
+                <div className = "thumbnail">
+                    <img className="img-responsive" src={this.props.url} />
+                </div>
+                <div className="caption">
+                    <h5>About this picture!</h5>
+                    <h6>This picture contains: </h6>
+                    <div style={{width: "100%"}}>
+                        <p style={{width: "100%", fontStyle: "italic"}}>{this.state.captions}</p>
+                    </div>
                 </div>
             </div>
         )
