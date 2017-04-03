@@ -108,3 +108,16 @@ typings/
 ###
 # End Sublime Text
 ###
+
+###
+#Visual studio code
+###
+.vscode/
+###
+#End Visual Studio Code
+
+###
+#vim files
+###
+.*.sw*
+###
